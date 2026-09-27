@@ -73,19 +73,19 @@ Open the HTML report:
 
     npx playwright show-report
 
+
 ## Test Execution Summary
 
-Total Tests: 14
+Total Tests: 18
+Passed: 11
+Failed: 7
+Execution Time: 32.8 seconds
 
-Passed: 10
+The failed tests identified API validation issues
+related to missing fields, empty payloads, invalid
+booking dates, and invalid price values.
 
-Failed: 4
-
-The four failed tests are negative test cases.
-They reveal potential API validation defects.
-
-The tests expect invalid requests to be rejected.
-The actual API responses are documented in BUGS.md.
+These failures are documented in BUGS.md.
 
 ## Defects Identified
 

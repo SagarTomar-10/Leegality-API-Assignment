@@ -167,3 +167,84 @@ creates a booking instead of rejecting the invalid input.
 
 ### Test Case
 
+---
+
+## Bug 5: API Accepts Negative Booking Price
+
+**Severity:** High  
+**Status:** Observed
+
+### Description
+The API accepts a booking request with a negative total price instead of rejecting it with a validation error.
+
+### Endpoint
+POST /booking
+
+### Request Body
+```json
+{
+  "firstname": "Sagar",
+  "lastname": "Tomar",
+  "totalprice": -100,
+  "depositpaid": true,
+  "bookingdates": {
+    "checkin": "2026-10-05",
+    "checkout": "2026-10-10"
+  },
+  "additionalneeds": "Lunch"
+}
+
+
+---
+
+## Bug 6: API Accepts Zero Booking Price
+
+**Severity:** Medium  
+**Status:** Observed
+
+### Description
+The API accepts a booking request with a total price of zero instead of rejecting it.
+
+### Endpoint
+POST /booking
+
+### Request Body
+```json
+{
+  "firstname": "Sagar",
+  "lastname": "Tomar",
+  "totalprice": 0,
+  "depositpaid": true,
+  "bookingdates": {
+    "checkin": "2026-10-05",
+    "checkout": "2026-10-10"
+  },
+  "additionalneeds": "Lunch"
+}
+
+---
+
+## Bug 7: API Accepts Invalid Price Data Type
+
+**Severity:** Medium  
+**Status:** Observed
+
+### Description
+The API accepts a booking request with a string value instead of a numeric total price.
+
+### Endpoint
+POST /booking
+
+### Request Body
+```json
+{
+  "firstname": "Sagar",
+  "lastname": "Tomar",
+  "totalprice": "invalid",
+  "depositpaid": true,
+  "bookingdates": {
+    "checkin": "2026-10-05",
+    "checkout": "2026-10-10"
+  },
+  "additionalneeds": "Lunch"
+}
